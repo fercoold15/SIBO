@@ -5,6 +5,7 @@
     <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
     <link rel="stylesheet" href="../CSS/FormGeneral.css">
+    <script src="../JS/FormularioAtaques.js"></script>
   </head>
   <body>
     <div class="testbox">
@@ -17,17 +18,26 @@
           <div class="item">
             <p>Fecha de Ataque<span class="required">*</span></p>
             <div class="name-item">
-              <input type="date" name="name" placeholder="Lugar del Accidente" required/>
+              <input type="date" id="Fecha de Ataque" name="name" placeholder="Lugar del Accidente" required/>
             </div>  
           <div class="item">
             <p>Lugar del Ataque<span class="required">*</span></p>
             <div class="name-item">
-              <input type="text" name="name" placeholder="Lugar del Accidente" required/>
+              <input type="text" id="Lugar Ataque" name="name" placeholder="Lugar del Accidente" required/>
             </div>  
-        
+            <div class="item">
+              <p>Cantidad Heridos<span class="required">*</span></p>
+              <div class="name-item">
+                <input type="Number" id="cantidadH" name="name" placeholder="Cantidad Heridos" required/>
+          </div>
+          <div class="item">
+              <p>Cantidad Fallecidos<span class="required">*</span></p>
+              <div class="name-item">
+                <input type="Number" id="cantidadF" name="name" placeholder="Cantidad Heridos" required/>
+          </div>
           <div class="item">
             <p>Tipo de Ataque<span class="required">*</span></p>
-            <select required>
+            <select required id="tipo ataque">
               <option value="1">Ataque</option>
               <option value="2">Ataque</option>
               <option value="3">Ataque</option>
@@ -36,26 +46,14 @@
             </select>
           </div>
         </div>
-        <div class="item">
-            <p>Cantidad Heridos<span class="required">*</span></p>
-            <div class="name-item">
-              <input type="Number" name="name" placeholder="Cantidad Heridos" required/>
-        </div>
-        <div class="item">
-            <p>Cantidad Fallecidos<span class="required">*</span></p>
-            <div class="name-item">
-              <input type="Number" name="name" placeholder="Cantidad Heridos" required/>
-        </div>
-        <div class="item">
-          <p>Unidad de Servicio<span class="required">*</span></p>
-          <select required>
-            <option value="1">Ambulancia 1</option>
-            <option value="2">Ambulancia 2</option>
-
-          </select>
         
+        <div class="item">
+          <p>Descripcion<span class="required">*</span></p>
+          <div class="name-item">
+            <input type="Number" id="Descripcion" name="name" placeholder="Descripcion" required/>
+      </div>
         <div class="btn-block">
-          <button type="submit" href="/">Ingresar Nuevo Ataque</button>
+          <button type="button" onClick="agregarAccidente()" >Ingresar Nuevo Accidente</button>
         </div>
       </form>
     </div>

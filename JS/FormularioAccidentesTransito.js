@@ -1,21 +1,19 @@
 function agregarAccidente(){
     var Fecha_Accidente = document.getElementById("Fecha Accidente");
     var Lugar = document.getElementById("Lugar Accidente");
-    var Tipo = document.getElementById("Tipo");
     var cantidadH = document.getElementById("CantidadH");
     var cantidadF = document.getElementById("CantidadF");
-    var Unidad = document.getElementById("Unidad de Servicio");
+    var Descripcion = document.getElementById("Descripcion");
+    
+    const jsonAccidente={
+        "Fecha_AccidenteTransito": Fecha_Accidente.value,
+        "Lugar_Accidente":Lugar.value,
+        "Personas_Heridas":cantidadH.value,
+        "Personas_Fallecidas":cantidadF.value,
+        "Descripcion":Descripcion.value
+      }
 
-  const jsonAccidente={
-    "Fecha_Accidente": Fecha_Accidente.value,
-    "Tipo_Accidente":Tipo.value,
-    "Lugar_Accidente":Lugar.value,
-    "Personas_Heridas":cantidadH.value,
-    "Personas_Fallecidas":cantidadF.value,
-
-  }
-
-    console.log(JSON.stringify(jsonAccidente))
+      console.log(JSON.stringify(jsonAccidente))
     
     const requestInit={
         method:'POST',
@@ -23,9 +21,6 @@ function agregarAccidente(){
         body:JSON.stringify(jsonAccidente)
       }
       console.log(requestInit)
-      fetch('http://localhost:9000/api/accidentesadd',requestInit)
+      fetch('http://localhost:9000/api/transitoadd',requestInit)
       .then(res => res.json())
-      
-
-      
-}
+    }
